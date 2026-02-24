@@ -1,0 +1,19 @@
+<%- include("partials/header.ejs") %>
+
+<div class="form-container">
+    <h2>Edit Post</h2>
+    <form action="/update/<%= post.id %>" method="POST">
+        <div class="form-group">
+            <label for="title">Title</label>
+            <input type="text" name="postTitle" id="title" value="<%= post.title %>" required>
+        </div>
+        <div class="form-group">
+            <label for="content">Content</label>
+            <textarea name="postContent" id="content" rows="8" required><%= post.content %></textarea>
+        </div>
+        <button type="submit" class="btn-new">Save Changes</button>
+        <a href="/" class="btn-cancel">Cancel</a>
+    </form>
+</div>
+
+<%- include("partials/footer.ejs") %>

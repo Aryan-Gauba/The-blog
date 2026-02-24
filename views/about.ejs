@@ -1,0 +1,29 @@
+<%- include("partials/header.ejs") %>
+
+<div class="about-container">
+    <h1>About This Project</h1>
+    <p class="lead-text">
+        Welcome to my personal blog application. This platform was built as a 
+        <strong>Capstone Project</strong> for The Complete Web Development Bootcamp.
+    </p>
+
+    <div class="about-content">
+        <h2>The Tech Stack</h2>
+        <ul>
+            <li><strong>Node.js & Express.js:</strong> Powering the server and handling routes.</li>
+            <li><strong>EJS:</strong> Serving as the templating engine for dynamic HTML.</li>
+            <li><strong>CSS3:</strong> Custom styling for a responsive, minimalist user experience.</li>
+        </ul>
+
+        <h2>Project Features</h2>
+        <p>
+            This application allows for full <strong>CRUD</strong> functionality (Create, Read, Update, and Delete) 
+            of blog posts. Note that as this version does not use a database, posts persist 
+            only for the duration of the server session.
+        </p>
+    </div>
+
+    <a href="/" class="back-link">← Back to Posts</a>
+</div>
+
+<%- include("partials/footer.ejs") %>
