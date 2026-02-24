@@ -1,8 +1,21 @@
 import express from "express";
 import bodyParser from "body-parser";
+import path from "path";
+import { fileURLToPath } from "url";
 
 const app = express();
 const port = 3000;
+
+// Recreate __dirname for ES Modules
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+// ... your app = express() setup ...
+
+// Use the absolute paths
+app.set("views", path.join(__dirname, "views"));
+app.set("view engine", "ejs");
+app.use(express.static(path.join(__dirname, "public")));
 
 let posts = [
   { id: 1, title: "My First Post", content: "Hello World!" }
@@ -11,8 +24,6 @@ let posts = [
 // ADD THIS LINE - It tells Express to expect EJS files
 app.set("view engine", "ejs"); 
 
-// Ensure this matches your folder name exactly
-app.use(express.static("public")); 
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.get("/", (req, res) => {
